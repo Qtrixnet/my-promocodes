@@ -1,0 +1,13 @@
+.steps {
+  display: flex;
+  gap: 16px;
+
+  &_mobile {
+    white-space: nowrap;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

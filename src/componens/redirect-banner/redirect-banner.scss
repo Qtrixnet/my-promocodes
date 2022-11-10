@@ -1,0 +1,33 @@
+@import "../../styles/colors.scss";
+
+.banner {
+  padding-top: 35px;
+  padding-left: 67px;
+  padding-bottom: 36px;
+  border-radius: 16px;
+  background-image: url("https://www.technodom.kz/under/my-coupons/barsik.png");
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: $primary;
+
+  &__title {
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 48px;
+    color: $white;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 16px 44px;
+    background-color: #50D4FC;
+    color: $white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+  }
+}

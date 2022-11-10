@@ -1,0 +1,23 @@
+.header {
+  padding-bottom: 32px;
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 40px;
+    line-height: 48px;
+    color: #212427;
+
+    &_mobile {
+      font-size: 28px;
+      line-height: 32px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    color: #8E979F;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

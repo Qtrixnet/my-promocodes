@@ -1,24 +1,34 @@
 @font-face {
-  font-family: Museo Extra Bold;
-  src: url(https://www.technodom.kz/under/tab_showcase/fonts/MuseoSansCyrl-ExtraBold.woff2);
+  font-family: "Museo";
+  src: url("https://www.technodom.kz/under/tab_showcase/fonts/MuseoSansCyrl-ExtraBold.woff2");
+  font-weight: 900;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: Museo Thin;
-  src: url(https://www.technodom.kz/under/tab_showcase/fonts/MuseoSansCyrl-Thin.woff2);
+  font-family: "Museo";
+  src: url("https://www.technodom.kz/under/tab_showcase/fonts/MuseoSansCyrl-Thin.woff2");
+  font-weight: 100;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: Museo Light;
-  src: url(https://www.technodom.kz/under/tab_showcase/fonts/MuseoSansCyrl-Light.woff2);
+  font-family: "Museo";
+  src: url("https://www.technodom.kz/under/tab_showcase/fonts/MuseoSansCyrl-Light.woff2");
+  font-weight: 300;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: Museo Regular;
-  src: url(https://www.technodom.kz/under/tab_showcase/fonts/MuseoSansCyrl-Regular.woff2);
+  font-family: "Museo";
+  src: url("https://www.technodom.kz/under/tab_showcase/fonts/MuseoSansCyrl-Regular.woff2");
+  font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: Museo Bold;
-  src: url(https://www.technodom.kz/under/tab_showcase/fonts/MuseoSansCyrl-Bold.woff2);
+  font-family: "Museo";
+  src: url("https://www.technodom.kz/under/tab_showcase/fonts/MuseoSansCyrl-Bold.woff2");
+  font-weight: 700;
+  font-display: swap;
 }

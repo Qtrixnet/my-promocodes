@@ -1,0 +1,52 @@
+@import "../../styles/colors.scss";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-basis: 33.3%;
+  padding: 16px 32px 16px 16px;
+  background: $primary;
+  border-radius: 16px;
+  color: $white;
+
+  &_mobile {
+    width: 200px;
+  }
+
+  &__container {
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-start;
+
+    &_mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 21px;
+    max-width: 54px;
+    max-height: 54px;
+    border-radius: 50%;
+    background-color: $white;
+    color: $secondary;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 900;
+  }
+
+  &__text-container {
+    margin-top: auto;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 20px;
+    line-height: 26px;
+  }
+}

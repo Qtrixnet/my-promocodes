@@ -1,0 +1,40 @@
+@import "../../styles/colors.scss";
+
+.tab {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background-color: $light2;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: $gray;
+
+  &_mobile {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &--active {
+    border: 1px solid $primary;
+    color: $primary;
+  }
+
+  &__number {
+    width: 20px;
+    max-height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 0;
+    border-radius: 50%;
+    color: $white;
+    background-color: $secondary;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

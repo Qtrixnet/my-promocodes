@@ -1,0 +1,9 @@
+@import "../../styles/colors.scss";
+
+.sad {
+  padding: 16px;
+  display: flex;
+  gap: 32px;
+  background: $light2;
+  border-radius: 16px;
+}

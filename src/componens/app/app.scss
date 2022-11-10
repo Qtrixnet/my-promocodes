@@ -1,7 +1,37 @@
 @import '../../styles/colors';
+@import '../../styles/base';
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.MyAccountCmsPage_myCms__55bsL {
+  padding: 0 !important;
+}
 
 #my-coupons .app {
-  font-family: Museo Regular, sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Museo", sans-serif;
   color: $dark;
   background-color: $light;
+  padding: 40px;
+
+  &_mobile {
+    padding: 16px;
+  }
+
+  button, input {
+    font-family: inherit;
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  img {
+    max-width: 100%;
+  }
 }
