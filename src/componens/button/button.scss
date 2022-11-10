@@ -1,0 +1,32 @@
+@import '../../styles/colors';
+
+#my-coupons .action-button {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: Museo Bold, sans-serif;
+  border: 2px solid transparent;
+  outline: 2px solid transparent;
+  transition: outline .2s ease;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+
+  &_default {
+    background-color: $white;
+    color: $dark;
+  }
+
+  &_active {
+    background-color: $white;
+    color: $primary;
+    border-color: $primary;
+
+    &:active {
+      outline: 2px solid rgba($primary, .5);
+    }
+  }
+}
