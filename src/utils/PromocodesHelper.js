@@ -1,21 +1,59 @@
-import {commonPromocodes} from "./common-promocodes";
+import {promocodes} from "./promocodes";
 
-class PromocodesHelper {
+class PromocodesCore {
+  _checkPromocodeValidity(promocodeDate) {
+    //! в условии должно быть >=
+    return (new Date(Date.parse(promocodeDate)).getTime() + 86400000) >= Date.now()
+  }
+}
+
+class PromocodesHelper extends PromocodesCore {
   constructor(globalPromocodes) {
+    super();
     this._globalPromocodes = globalPromocodes;
-    this._promocodes = null;
+    this._promocodes = {};
     this._ids = [];
     this._receivedPromocodes = [];
     this._commonPromocodes = [];
   }
 
-  _checkPromocodeValidity(promocodeDate) {
-    //! в условии должно быть >=
-    return (new Date(Date.parse(promocodeDate)).getTime() + 86400000) <= Date.now()
+  receivePromocode(json, setPromocodesData) {
+    const data = JSON.parse(json);
+    const {id, till} = data;
+    console.log(this._promocodes)
+    /* eslint-disable-next-line */
+    r46("get_promo_code", {id}, promocode => {
+
+      let i = (isNaN(Number(Object.keys(this._promocodes).at(-1)))) ? 1 : (Number(Object.keys(this._promocodes).at(-1)) + 1);
+
+      this._promocodes[i] = {
+        "id": `${id}`,
+        "promocode": promocode,
+        "till": till
+      };
+
+      console.log(this._promocodes)
+
+      const receivedPromocode = this._commonPromocodes.find(promocode => promocode.id === data.id);
+      const updatedReceivedPromocode = {
+        ...receivedPromocode,
+        isReceived: true,
+        promocode,
+      }
+      this._commonPromocodes = this._commonPromocodes.filter(promocode => promocode.id !== data.id);
+      this._receivedPromocodes.push(updatedReceivedPromocode);
+
+      const preparedPromocodes = [...this._receivedPromocodes, ...this._commonPromocodes];
+      const sortedPromocodes = preparedPromocodes.sort((a, b) => b.discount - a.discount);
+
+      setPromocodesData(sortedPromocodes);
+
+      /* eslint-disable-next-line */
+      r46("profile", "set", {"promocode_list": this._promocodes})
+    })
   }
 
   getPromocodesData(setPromocodesData) {
-    console.log(setPromocodesData)
     /**
      * Получаем данные профиля клиента
      */
@@ -26,6 +64,7 @@ class PromocodesHelper {
        */
       if (profile.custom_properties.promocode_list) {
         this._promocodes = profile.custom_properties.promocode_list;
+        console.log(profile.custom_properties)
 
         if (this._promocodes) {
 
@@ -87,13 +126,13 @@ class PromocodesHelper {
           }).then(response => {
             return response.json();
           }).then(data => {
-            let activeIds = data.active;
+            const {active} = data;
 
             for (let key in this._globalPromocodes) {
               /**
                * Исключаем полученные купоны
                */
-              if ((this._ids.indexOf(this._globalPromocodes[key].id) === -1) && (activeIds.indexOf(this._globalPromocodes[key].id) !== -1)) {
+              if ((this._ids.indexOf(this._globalPromocodes[key].id) === -1) && (active.indexOf(this._globalPromocodes[key].id) !== -1)) {
                 const day = new Date(Date.parse(this._globalPromocodes[key].till)).getDate();
                 const month = new Date(Date.parse(this._globalPromocodes[key].till)).getMonth();
 
@@ -106,12 +145,15 @@ class PromocodesHelper {
                     day,
                     month,
                     ...this._globalPromocodes[key],
+                    json: JSON.stringify(this._globalPromocodes[key]),
                   })
                 }
               }
             }
+            const preparedPromocodes = [...this._receivedPromocodes, ...this._commonPromocodes];
+            const sortedPromocodes = preparedPromocodes.sort((a, b) => b.discount - a.discount);
 
-            setPromocodesData([...this._receivedPromocodes, ...this._commonPromocodes]);
+            setPromocodesData(sortedPromocodes);
           })
         }
       }
@@ -119,5 +161,5 @@ class PromocodesHelper {
   }
 }
 
-const promocodesHelper = new PromocodesHelper(commonPromocodes);
+const promocodesHelper = new PromocodesHelper(promocodes);
 export default promocodesHelper;

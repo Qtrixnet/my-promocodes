@@ -16,11 +16,16 @@ body {
   box-sizing: border-box;
   font-family: "Museo", sans-serif;
   color: $dark;
-  background-color: $light;
   padding: 40px;
 
   &_mobile {
     padding: 16px;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 1232px;
+    margin: 0 auto;
   }
 
   button, input {

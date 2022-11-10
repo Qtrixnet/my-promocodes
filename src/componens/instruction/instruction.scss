@@ -12,6 +12,11 @@
   background-position: center right;
   background-size: contain;
   color: $gray;
+  margin-bottom: 16px;
+
+  &_mobile {
+    margin-bottom: 24px;
+  }
 
   &__image-container {
     display: none;

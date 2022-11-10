@@ -1,0 +1,17 @@
+@import "../../styles/colors";
+
+#my-coupons .loader {
+  width: 32px;
+  height: 32px;
+  border: 2px solid $primary;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: rotate 1s linear infinite;
+  margin: 32px auto;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}

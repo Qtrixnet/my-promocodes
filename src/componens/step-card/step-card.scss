@@ -5,13 +5,18 @@
   flex-direction: column;
   justify-content: space-between;
   flex-basis: 33.3%;
-  padding: 16px 32px 16px 16px;
+  padding: 16px;
   background: $primary;
   border-radius: 16px;
   color: $white;
 
+  &__text {
+    margin: 0 0 24px;
+    white-space: normal;
+  }
+
   &_mobile {
-    width: 200px;
+    min-width: 200px;
   }
 
   &__container {
@@ -48,5 +53,6 @@
     margin-bottom: 16px;
     font-size: 20px;
     line-height: 26px;
+    white-space: normal;
   }
 }

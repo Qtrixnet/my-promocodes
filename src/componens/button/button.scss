@@ -1,32 +1,92 @@
-@import '../../styles/colors';
+@import "../../styles/colors";
 
 #my-coupons .action-button {
-  padding: 12px 16px;
+  padding: 16px;
+  margin: 0;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 24px;
-  font-family: Museo Bold, sans-serif;
-  border: 2px solid transparent;
+  font-family: Museo Regular, sans-serif;
+  border: 1px solid transparent;
   outline: 2px solid transparent;
-  transition: outline .2s ease;
+  transition: opacity .2s ease, outline .2s ease;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-sizing: border-box;
 
   &:hover {
     cursor: pointer;
     opacity: 0.8;
   }
 
-  &_default {
-    background-color: $white;
-    color: $dark;
+  &_promocode {
+    padding: 16px;
+    font-size: 16px;
+    line-height: 20px;
+
+    @media screen and (max-width: 768px) {
+      padding: 10px;
+      font-size: 9px;
+      line-height: 14px;
+    }
   }
 
-  &_active {
+  &_secondary {
+    background-color: $secondary;
+    color: $white;
+    border-color: $secondary;
+
+    &:active {
+      outline: 2px solid rgba($secondary, .5);
+    }
+  }
+
+  &_success {
+    background-color: $success;
+    color: $white;
+    border-color: $success;
+
+    &:active {
+      outline: 2px solid rgba($success, .5);
+    }
+  }
+
+  &_secondary-outline {
     background-color: $white;
-    color: $primary;
+    color: $secondary;
+    border-color: $secondary;
+
+    &:active {
+      outline: 2px solid rgba($secondary, .5);
+    }
+  }
+
+  &_primary {
+    background-color: $primary;
+    color: $white;
     border-color: $primary;
 
     &:active {
       outline: 2px solid rgba($primary, .5);
     }
+  }
+
+  &_disabled {
+    pointer-events: none;
+    background-color: $dark-secondary;
+    border-color: $dark-secondary;
+  }
+
+  &__notify {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url("https://www.technodom.kz/under/shopping-day/bell.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   }
 }

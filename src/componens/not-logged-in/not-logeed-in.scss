@@ -1,0 +1,47 @@
+#my-coupons .not-logged-in {
+  background: rgba(249, 249, 249, 0.9);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  gap: 32px;
+  box-sizing: border-box;
+
+  &_mobile {
+    flex-direction: column;
+  }
+
+  &__title {
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 48px;
+    margin: 0;
+
+    &_mobile {
+      font-size: 28px;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 16px 0 32px;
+
+    &_mobile {
+      text-align: center;
+    }
+
+  }
+
+  &__button {
+    padding: 10px 46px;
+
+    &_mobile {
+      width: 100%;
+    }
+  }
+}

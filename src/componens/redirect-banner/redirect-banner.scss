@@ -1,6 +1,6 @@
 @import "../../styles/colors.scss";
 
-.banner {
+#my-coupons .banner {
   padding-top: 35px;
   padding-left: 67px;
   padding-bottom: 36px;
@@ -11,12 +11,23 @@
   background-size: contain;
   background-color: $primary;
 
+  &_mobile {
+    padding-top: 14px;
+    padding-left: 24px;
+    padding-bottom: 14px;
+  }
+
   &__title {
     font-weight: 900;
     font-size: 40px;
     line-height: 48px;
     color: $white;
     text-transform: uppercase;
+
+    &_mobile {
+      font-size: 16px;
+      line-height: 18px;
+    }
   }
 
   &__link {
@@ -29,5 +40,12 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 19px;
+
+    &_mobile {
+      font-size: 8px;
+      line-height: 12px;
+      padding: 6px 14px;
+      border-radius: 2px;
+    }
   }
 }

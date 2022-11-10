@@ -1,0 +1,26 @@
+#my-coupons .redirect {
+
+  &__title {
+    font-size: 40px;
+    line-height: 48px;
+    margin: 0 0 16px;
+
+    &_mobile {
+      font-size: 28px;
+      line-height: 32px;
+      margin: 0 0 8px;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 20px;
+    color: #8E979F;
+    margin: 0 0 16px;
+
+    &_mobile {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+}
